@@ -38,7 +38,8 @@ public class SecurityConfig {
                 .authorizeHttpRequests()
                 .requestMatchers("/saveUserProfile").permitAll()
                 .and()
-                .authorizeHttpRequests().anyRequest().authenticated().and().formLogin().and()
+                .authorizeHttpRequests().anyRequest().authenticated().and()
+                .httpBasic(Customizer.withDefaults())
                 .build();
     }
 

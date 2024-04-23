@@ -36,6 +36,12 @@ public class UserController {
         return "Check for admin role";
     }
 
+    @GetMapping("/uts_user")
+    @PreAuthorize("hasAuthority('ROLE_UTS')")
+    public String checkUts(){
+        return "Check for uts_user role";
+    }
+
 
     @PostMapping("/saveUserProfile")
     public UserProfile saveUserProfile(@RequestBody UserProfile userProfile){
